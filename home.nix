@@ -13,7 +13,8 @@
     userName = "niLPotential";
     userEmail = "niLPotential@proton.me";
   };
-  programs.go. enable = true;
+  programs.gnome-shell.enable = true;
+  programs.go.enable = true;
   programs.helix = {
     enable = true;
     defaultEditor = true;

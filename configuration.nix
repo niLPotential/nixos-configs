@@ -59,9 +59,13 @@
   # You can disable this if you're only using the Wayland session.
   services.xserver.enable = true;
 
+  # Enable GNOME
+  services.xserver.displayManager.gdm.enable = true;
+  services.xserver.desktopManager.gnome.enable = true;
+
   # Enable the KDE Plasma Desktop Environment.
-  services.displayManager.sddm.enable = true;
-  services.desktopManager.plasma6.enable = true;
+  # services.displayManager.sddm.enable = false;
+  # services.desktopManager.plasma6.enable = false;
 
   # Configure keymap in X11
   services.xserver.xkb = {
@@ -98,8 +102,6 @@
     extraGroups = [ "networkmanager" "wheel" ];
     packages = with pkgs; [
       kdePackages.ghostwriter
-      kdePackages.kate
-      #  thunderbird
     ];
   };
   users.defaultUserShell = pkgs.zsh;
@@ -150,21 +152,39 @@
   # $ nix search wget
   environment.systemPackages = with pkgs; [
     deno
-    deskflow
     geekbench
     gh
     ghostty
+    gnomeExtensions.kimpanel
     go
     gotools
     gopls
     helix
+    jetbrains.webstorm
+    lan-mouse
     nil
     nixpkgs-fmt
-  ];
-  nixpkgs.config.permittedInsecurePackages = [
-    "deskflow-1.19.0"
+    openssl
   ];
 
+  environment.gnome.excludePackages = with pkgs;[
+    cheese
+    epiphany
+    evince
+    geary
+    gedit
+    gnome-calendar
+    gnome-clocks
+    gnome-contacts
+    gnome-maps
+    gnome-music
+    gnome-terminal
+    gnome-text-editor
+    gnome-tour
+    gnome-weather
+    totem
+    xterm
+  ];
   fonts.fontconfig.defaultFonts = {
     monospace = [ "D2Coding ligature" ];
     sansSerif = [ "NanumBarunGothic" ];
