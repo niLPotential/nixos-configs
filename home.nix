@@ -2,85 +2,51 @@
   home.username = "kiria";
   home.homeDirectory = "/home/kiria";
 
+  helix.enable = true;
+  river.enable = true;
+
+
   stylix.enable = true;
 
   gtk.enable = true;
+  qt.enable = true;
+  services.mako.enable = true;
+  services.wob.enable = true;
+  services.wpaperd.enable = true;
 
-  programs.firefox.enable = true;
+  programs.firefox = {
+    enable = true;
+    # profiles.kiria = {
+    #   name = "kiria";
+    #   search = {
+    #     default = "ddg";
+    #   };
+    # };
+  };
+  stylix.targets.firefox = {
+    colorTheme.enable = true;
+    # profileNames = [ "kiria" ];
+  };
+  programs.fuzzel.enable = true;
+  programs.fzf.enable = true;
   # programs.gh.enable = true;
+  programs.ghostty.enable = true;
   programs.git = {
     enable = true;
     userName = "niLPotential";
     userEmail = "niLPotential@proton.me";
   };
-  programs.gnome-shell.enable = true;
   programs.go.enable = true;
-  programs.helix = {
+  programs.starship = {
     enable = true;
-    defaultEditor = true;
-    languages = {
-      language = [
-        {
-          name = "javascript";
-          shebangs = [ "deno" ];
-          roots = [ "deno.json" "deno.jsonc" ];
-          file-types = [ "js" ];
-          language-servers = [ "deno-lsp" ];
-          auto-format = true;
-        }
-        {
-          name = "typescript";
-          shebangs = [ "deno" ];
-          roots = [ "deno.json" "deno.jsonc" ];
-          file-types = [ "ts" ];
-          language-servers = [ "deno-lsp" ];
-          auto-format = true;
-        }
-        {
-          name = "jsx";
-          shebangs = [ "deno" ];
-          roots = [ "deno.json" "deno.jsonc" ];
-          file-types = [ "jsx" ];
-          language-servers = [ "deno-lsp" ];
-          auto-format = true;
-        }
-        {
-          name = "tsx";
-          shebangs = [ "deno" ];
-          roots = [ "deno.json" "deno.jsonc" ];
-          file-types = [ "tsx" ];
-          language-servers = [ "deno-lsp" ];
-          auto-format = true;
-        }
-        {
-          name = "json";
-          formatter = { command = "deno"; args = [ "fmt" "-" "--ext" "json" ]; };
-          auto-format = true;
-        }
-        {
-          name = "html";
-          formatter = { command = "deno"; args = [ "fmt" "-" "--ext" "html" ]; };
-          auto-format = true;
-        }
-        {
-          name = "go";
-          auto-format = true;
-          formatter = { command = "goimports"; };
-        }
-      ];
-      language-server.deno-lsp = {
-        command = "deno";
-        args = [ "lsp" ];
-        environment = { NO_COLOR = "1"; };
-        config.deno = {
-          enable = true;
-        };
-      };
+    settings = {
+      nodejs.disabled = true;
     };
   };
-  programs.ssh.enable = true;
-  programs.starship.enable = true;
+  programs.waybar.enable = true;
+  programs.yazi.enable = true;
   programs.zed-editor.enable = true;
+  programs.zoxide.enable = true;
   programs.zsh.enable = true;
 
 

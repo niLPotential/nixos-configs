@@ -27,51 +27,17 @@
   # Enable networking
   networking.networkmanager.enable = true;
 
-  # Set your time zone.
-  time.timeZone = "Asia/Seoul";
-
-  # Select internationalisation properties.
-  i18n.defaultLocale = "en_US.UTF-8";
-
-  i18n.extraLocaleSettings = {
-    LC_ADDRESS = "ko_KR.UTF-8";
-    LC_IDENTIFICATION = "ko_KR.UTF-8";
-    LC_MEASUREMENT = "ko_KR.UTF-8";
-    LC_MONETARY = "ko_KR.UTF-8";
-    LC_NAME = "ko_KR.UTF-8";
-    LC_NUMERIC = "ko_KR.UTF-8";
-    LC_PAPER = "ko_KR.UTF-8";
-    LC_TELEPHONE = "ko_KR.UTF-8";
-    LC_TIME = "ko_KR.UTF-8";
-  };
-  i18n.inputMethod = {
-    enable = true;
-    type = "fcitx5";
-    fcitx5 = {
-      addons = with pkgs; [
-        fcitx5-hangul
-      ];
-      waylandFrontend = true;
-    };
-  };
+  korean.enable = true;
 
   # Enable the X11 windowing system.
   # You can disable this if you're only using the Wayland session.
-  services.xserver.enable = true;
-
-  # Enable GNOME
-  services.xserver.displayManager.gdm.enable = true;
-  services.xserver.desktopManager.gnome.enable = true;
-
-  # Enable the KDE Plasma Desktop Environment.
-  # services.displayManager.sddm.enable = false;
-  # services.desktopManager.plasma6.enable = false;
+  # services.xserver.enable = true;
 
   # Configure keymap in X11
-  services.xserver.xkb = {
-    layout = "us";
-    variant = "";
-  };
+  # services.xserver.xkb = {
+  #   layout = "us";
+  #   variant = "";
+  # };
 
   # Enable CUPS to print documents.
   services.printing.enable = true;
@@ -99,14 +65,15 @@
   users.users.kiria = {
     isNormalUser = true;
     description = "niLPotential";
-    extraGroups = [ "networkmanager" "wheel" ];
+    extraGroups = [ "networkmanager" "wheel" "seat" "input" ];
     packages = with pkgs; [
       kdePackages.ghostwriter
     ];
   };
   users.defaultUserShell = pkgs.zsh;
 
-  # Install firefox.
+  river.enable = true;
+  stylixModule.enable = true;
   programs.firefox.enable = true;
   programs.git = {
     enable = true;
@@ -114,77 +81,35 @@
       init.defaultBranch = "main";
     };
   };
+
   programs.starship.enable = true;
   programs.zsh.enable = true;
 
   # Allow unfree packages
-  nixpkgs.config.allowUnfree = true;
-
-  stylix = {
-    enable = true;
-    image = pkgs.fetchurl {
-      url = "https://storage.matsurihi.me/mltd/card_bg/049mom0584_1.png";
-      hash = "sha256-iFtWhrrmgQJ+FYVX14Rt2+Kgj3ajhMJ7u8pP6cF/S2c=";
-    };
-    # image = pkgs.fetchurl {
-    #   url = "https://storage.matsurihi.me/mltd/card_bg/049mom0384_1.png";
-    #   hash = "sha256-T0rrI2DsYsrPlN2s0LMhDZP+RQQ8Rp7PgcSkEGv2YJ4=";
-    # };
-    fonts = {
-      monospace = {
-        name = "D2Coding ligature";
-        package = pkgs.d2coding;
-      };
-      sansSerif = {
-        name = "NanumBarunGothic";
-        package = pkgs.nanum;
-      };
-      serif = {
-        name = "NanumMyeongjo";
-        package = pkgs.nanum;
-      };
-    };
-  };
+  # nixpkgs.config.allowUnfree = true;
 
   home-manager.backupFileExtension = "backup";
 
   # List packages installed in system profile. To search, run:
   # $ nix search wget
   environment.systemPackages = with pkgs; [
+    # greetd.regreet
+
     deno
-    geekbench
+    fzf
     gh
     ghostty
-    gnomeExtensions.kimpanel
     go
     gotools
     gopls
     helix
-    jetbrains.webstorm
     lan-mouse
     nil
     nixpkgs-fmt
-    openssl
+    yazi
+    zoxide
   ];
 
-  environment.gnome.excludePackages = with pkgs;[
-    cheese
-    epiphany
-    evince
-    geary
-    gedit
-    gnome-calendar
-    gnome-clocks
-    gnome-contacts
-    gnome-maps
-    gnome-music
-    gnome-terminal
-    gnome-text-editor
-    gnome-tour
-    gnome-weather
-    totem
-    xterm
-  ];
   fonts.fontconfig.defaultFonts = {
     monospace = [ "D2Coding ligature" ];
     sansSerif = [ "NanumBarunGothic" ];

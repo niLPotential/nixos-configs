@@ -12,15 +12,23 @@
         specialArgs = { inherit inputs; };
         modules = [
           ./configuration.nix
+          ./os
           home-manager.nixosModules.home-manager
           {
-            home-manager.useGlobalPkgs = true;
-            home-manager.useUserPackages = true;
-            home-manager.users.kiria = import ./home.nix;
+            home-manager = {
+              extraSpecialArgs = { inherit inputs; };
+              useGlobalPkgs = true;
+              useUserPackages = true;
+              users.kiria.imports = [
+                ./home.nix
+                inputs.self.outputs.homeManagerModules.default
+              ];
+            };
           }
           stylix.nixosModules.stylix
         ];
       };
     };
+    homeManagerModules.default = ./hm;
   };
 }
