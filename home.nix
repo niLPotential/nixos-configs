@@ -2,8 +2,10 @@
   home.username = "kiria";
   home.homeDirectory = "/home/kiria";
 
+  fuzzel.enable = true;
   helix.enable = true;
   river.enable = true;
+  waybar.enable = true;
 
 
   stylix.enable = true;
@@ -27,7 +29,6 @@
     colorTheme.enable = true;
     # profileNames = [ "kiria" ];
   };
-  programs.fuzzel.enable = true;
   programs.fzf.enable = true;
   # programs.gh.enable = true;
   programs.ghostty.enable = true;
@@ -43,9 +44,8 @@
       nodejs.disabled = true;
     };
   };
-  programs.waybar.enable = true;
   programs.yazi.enable = true;
-  programs.zed-editor.enable = true;
+  # programs.zed-editor.enable = true;
   programs.zoxide.enable = true;
   programs.zsh.enable = true;
 

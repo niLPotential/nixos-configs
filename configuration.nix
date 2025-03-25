@@ -29,16 +29,6 @@
 
   korean.enable = true;
 
-  # Enable the X11 windowing system.
-  # You can disable this if you're only using the Wayland session.
-  # services.xserver.enable = true;
-
-  # Configure keymap in X11
-  # services.xserver.xkb = {
-  #   layout = "us";
-  #   variant = "";
-  # };
-
   # Enable CUPS to print documents.
   services.printing.enable = true;
 
@@ -81,7 +71,6 @@
       init.defaultBranch = "main";
     };
   };
-
   programs.starship.enable = true;
   programs.zsh.enable = true;
 
@@ -93,8 +82,6 @@
   # List packages installed in system profile. To search, run:
   # $ nix search wget
   environment.systemPackages = with pkgs; [
-    # greetd.regreet
-
     deno
     fzf
     gh
