@@ -1,4 +1,4 @@
-{ lib, config, ... }: {
+{ pkgs, lib, config, ... }: {
   options = {
     helix.enable = lib.mkEnableOption "enables helix editor";
   };
@@ -6,6 +6,13 @@
     programs.helix = {
       enable = true;
       defaultEditor = true;
+      extraPackages = with pkgs;[
+        deno
+        gopls
+        gotools
+        nil
+        nixpkgs-fmt
+      ];
       languages = {
         language = [
           {

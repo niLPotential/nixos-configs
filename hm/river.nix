@@ -46,7 +46,7 @@
           "waybar"
           "'rivertile -view-padding 4 -outer-padding 4'"
         ];
-        extra-commands = ["echo 42"     ];
+        extra-commands = [ "echo 42" ];
         border-width = 6;
       };
     };

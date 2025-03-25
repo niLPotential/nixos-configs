@@ -64,14 +64,18 @@
 
   river.enable = true;
   stylixModule.enable = true;
-  programs.firefox.enable = true;
   programs.git = {
     enable = true;
     config = {
       init.defaultBranch = "main";
     };
   };
-  programs.starship.enable = true;
+  programs.starship = {
+    enable = true;
+    presets = [
+      "no-nerd-font"
+    ];
+  };
   programs.zsh.enable = true;
 
   # Allow unfree packages
@@ -83,18 +87,11 @@
   # $ nix search wget
   environment.systemPackages = with pkgs; [
     deno
-    fzf
-    gh
-    ghostty
-    go
-    gotools
     gopls
-    helix
+    gotools
     lan-mouse
     nil
     nixpkgs-fmt
-    yazi
-    zoxide
   ];
 
   fonts.fontconfig.defaultFonts = {
