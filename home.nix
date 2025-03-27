@@ -7,7 +7,7 @@
   helix.enable = true;
   river.enable = true;
   waybar.enable = true;
-  zed-editor.enable = false;
+  zed-editor.enable = true;
 
 
   stylix.enable = true;
