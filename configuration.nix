@@ -17,6 +17,7 @@
 
   boot.plymouth.enable = true;
 
+  boot.initrd.luks.devices."luks-344de576-a8ad-43ba-bbee-ad8c8a25b4d2".device = "/dev/disk/by-uuid/344de576-a8ad-43ba-bbee-ad8c8a25b4d2";
   networking.hostName = "niX"; # Define your hostname.
   # networking.wireless.enable = true;  # Enables wireless support via wpa_supplicant.
 
@@ -28,28 +29,6 @@
   networking.networkmanager.enable = true;
 
   korean.enable = true;
-
-  # Enable CUPS to print documents.
-  services.printing.enable = true;
-
-  # Enable sound with pipewire.
-  services.pulseaudio.enable = false;
-  security.rtkit.enable = true;
-  services.pipewire = {
-    enable = true;
-    alsa.enable = true;
-    alsa.support32Bit = true;
-    pulse.enable = true;
-    # If you want to use JACK applications, uncomment this
-    #jack.enable = true;
-
-    # use the example session manager (no others are packaged yet so this is enabled by default,
-    # no need to redefine it in your config for now)
-    #media-session.enable = true;
-  };
-
-  # Enable touchpad support (enabled default in most desktopManager).
-  # services.xserver.libinput.enable = true;
 
   # Define a user account. Don't forget to set a password with ‘passwd’.
   users.users.kiria = {
@@ -79,7 +58,7 @@
   programs.zsh.enable = true;
 
   # Allow unfree packages
-  # nixpkgs.config.allowUnfree = true;
+  nixpkgs.config.allowUnfree = true;
 
   home-manager.backupFileExtension = "backup";
 

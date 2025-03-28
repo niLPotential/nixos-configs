@@ -1,11 +1,17 @@
 {
   inputs = {
     nixpkgs.url = "github:nixos/nixpkgs/nixos-unstable";
-    home-manager.url = "github:nix-community/home-manager";
-    home-manager.inputs.nixpkgs.follows = "nixpkgs";
+    lanzaboote = {
+      url = "github:nix-community/lanzaboote/v0.4.2";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
+    home-manager = {
+      url = "github:nix-community/home-manager";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
     stylix.url = "github:danth/stylix";
   };
-  outputs = { nixpkgs, home-manager, stylix, ... }@inputs: {
+  outputs = { nixpkgs, lanzaboote, home-manager, stylix, ... }@inputs: {
     nixosConfigurations = {
       niX = nixpkgs.lib.nixosSystem {
         system = "x86_64-linux";
@@ -13,6 +19,17 @@
         modules = [
           ./configuration.nix
           ./os
+          lanzaboote.nixosModules.lanzaboote
+          ({ pkgs, lib, ... }: {
+            environment.systemPackages = [
+              pkgs.sbctl
+            ];
+            boot.loader.systemd-boot.enable = lib.mkForce false;
+            boot.lanzaboote = {
+              enable = true;
+              pkiBundle = "/var/lib/sbctl";
+            };
+          })
           home-manager.nixosModules.home-manager
           {
             home-manager = {
