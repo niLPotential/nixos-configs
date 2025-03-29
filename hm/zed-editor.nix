@@ -10,6 +10,10 @@
         "astro"
         "deno"
       ];
+      userSettings = {
+        buffer_line_height = "standard";
+        vim_mode = true;
+      };
     };
   };
 }
