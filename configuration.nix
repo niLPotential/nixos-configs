@@ -5,11 +5,10 @@
 { pkgs, ... }:
 
 {
-  imports =
-    [
-      # Include the results of the hardware scan.
-      ./hardware-configuration.nix
-    ];
+  imports = [
+    # Include the results of the hardware scan.
+    ./hardware-configuration.nix
+  ];
 
   # Bootloader.
   boot.loader.systemd-boot.enable = true;
@@ -17,7 +16,8 @@
 
   boot.plymouth.enable = true;
 
-  boot.initrd.luks.devices."luks-344de576-a8ad-43ba-bbee-ad8c8a25b4d2".device = "/dev/disk/by-uuid/344de576-a8ad-43ba-bbee-ad8c8a25b4d2";
+  boot.initrd.luks.devices."luks-344de576-a8ad-43ba-bbee-ad8c8a25b4d2".device =
+    "/dev/disk/by-uuid/344de576-a8ad-43ba-bbee-ad8c8a25b4d2";
   networking.hostName = "niX"; # Define your hostname.
   # networking.wireless.enable = true;  # Enables wireless support via wpa_supplicant.
 
@@ -34,7 +34,12 @@
   users.users.kiria = {
     isNormalUser = true;
     description = "niLPotential";
-    extraGroups = [ "networkmanager" "wheel" "seat" "input" ];
+    extraGroups = [
+      "networkmanager"
+      "wheel"
+      "seat"
+      "input"
+    ];
     packages = with pkgs; [
       kdePackages.ghostwriter
     ];
@@ -69,8 +74,8 @@
     gopls
     gotools
     lan-mouse
-    nil
-    nixpkgs-fmt
+    nixd
+    nixfmt-rfc-style
   ];
 
   fonts.fontconfig.defaultFonts = {
@@ -79,7 +84,10 @@
     serif = [ "NanumMyeongjo" ];
   };
 
-  nix.settings.experimental-features = [ "nix-command" "flakes" ];
+  nix.settings.experimental-features = [
+    "nix-command"
+    "flakes"
+  ];
 
   system.autoUpgrade.enable = true;
   system.autoUpgrade.allowReboot = true;

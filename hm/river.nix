@@ -1,4 +1,5 @@
-{ lib, config, ... }: {
+{ lib, config, ... }:
+{
   options = {
     river.enable = lib.mkEnableOption "enables river wayland compositor";
   };

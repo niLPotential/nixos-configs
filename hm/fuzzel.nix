@@ -1,4 +1,5 @@
-{ lib, config, ... }: {
+{ lib, config, ... }:
+{
   options = {
     fuzzel.enable = lib.mkEnableOption "enables fuzzel";
   };

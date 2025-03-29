@@ -9,7 +9,6 @@
   waybar.enable = true;
   zed-editor.enable = true;
 
-
   stylix.enable = true;
 
   gtk.enable = true;
@@ -39,7 +38,6 @@
   programs.yazi.enable = true;
   programs.zoxide.enable = true;
   programs.zsh.enable = true;
-
 
   home.stateVersion = "24.11";
   programs.home-manager.enable = true;

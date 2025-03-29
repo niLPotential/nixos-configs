@@ -1,4 +1,9 @@
-{ pkgs, lib, config, ... }:
+{
+  pkgs,
+  lib,
+  config,
+  ...
+}:
 {
   options = {
     river.enable = lib.mkEnableOption "enables river wayland compositor";
@@ -33,4 +38,3 @@
     };
   };
 }
-

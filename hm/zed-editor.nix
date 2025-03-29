@@ -1,4 +1,5 @@
-{ lib, config, ... }: {
+{ lib, config, ... }:
+{
   options = {
     zed-editor.enable = lib.mkEnableOption "enables zed-editor";
   };
