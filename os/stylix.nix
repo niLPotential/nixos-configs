@@ -1,4 +1,10 @@
-{ pkgs, lib, config, ... }: {
+{
+  pkgs,
+  lib,
+  config,
+  ...
+}:
+{
   options = {
     stylixModule.enable = lib.mkEnableOption "enables stylix module";
   };
@@ -25,6 +31,12 @@
         serif = {
           name = "NanumMyeongjo";
           package = pkgs.nanum;
+        };
+        sizes = {
+          applications = 14;
+          desktop = 12;
+          popups = 12;
+          terminal = 14;
         };
       };
     };
