@@ -35,6 +35,7 @@
           };
         };
         default-layout = "rivertile";
+        focus-follows-cursor = "normal";
         hide-cursor = {
           when-typing = true;
         };
