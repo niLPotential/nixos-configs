@@ -39,6 +39,12 @@
         hide-cursor = {
           when-typing = true;
         };
+        input = {
+          "\\*-Touchpad" = {
+            natural-scroll = "disabled";
+            tap = "enabled";
+          };
+        };
         rule-add = {
           "-app-id" = {
             "\\*" = "ssd";
