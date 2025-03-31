@@ -97,6 +97,10 @@
                       url = "https://astro.build/";
                     }
                     {
+                      name = "Alpine.js";
+                      url = "https://alpinejs.dev";
+                    }
+                    {
                       name = "Tailwind CSS";
                       url = "https://tailwindcss.com/";
                     }
