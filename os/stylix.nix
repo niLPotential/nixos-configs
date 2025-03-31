@@ -33,10 +33,10 @@
           package = pkgs.nanum;
         };
         sizes = {
-          applications = 14;
-          desktop = 12;
-          popups = 12;
-          terminal = 14;
+          applications = 18;
+          desktop = 15;
+          popups = 15;
+          terminal = 18;
         };
       };
     };
