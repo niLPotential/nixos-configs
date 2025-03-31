@@ -40,7 +40,7 @@
           when-typing = true;
         };
         input = {
-          "\\*-Touchpad" = {
+          "\\*_Touchpad" = {
             natural-scroll = "disabled";
             tap = "enabled";
           };
