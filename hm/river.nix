@@ -10,7 +10,6 @@
       settings = {
         map = {
           normal = {
-            "Super Escape" = "exit";
             "Super Q" = "close";
             "Super F" = "spawn firefox";
             "Super G" = "spawn ghostty";
@@ -32,6 +31,12 @@
             "Super+Shift P" = "swap previous";
 
             "Super Return" = "zoom";
+
+            "Super 1" = "set-focused-tags 1";
+            "Super+Shift 1" = "set-view-tags 1";
+            "Super+Control 1" = "toggle-focused-tags 1";
+            "Super+Shift+Control 1" = "toggle-view-tags 1";
+
           };
         };
         default-layout = "rivertile";
