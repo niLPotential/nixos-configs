@@ -38,28 +38,35 @@
             }
             // builtins.listToAttrs (
               builtins.concatMap
-                (i: [
-                  {
-                    name = "Super ${i}";
-                    value = "set-focused-tags ${i}";
-                  }
-                  {
-                    name = "Super+Shift ${i}";
-                    value = "set-view-tags ${i}";
-                  }
-                  {
-                    name = "Super+Control ${i}";
-                    value = "toggle-focused-tags ${i}";
-                  }
-                  {
-                    name = "Super+Shift+Control ${i}";
-                    value = "toggle-view-tags ${i}";
-                  }
-                ])
+                (
+                  i:
+                  let
+                    pow2 = n: p: if n == 0 then 1 else pow2 (n - 1) (2 * p);
+                    tagmask = pow2 (i - 1) 1;
+                  in
+                  [
+                    {
+                      name = "Super ${toString i}";
+                      value = "set-focused-tags ${toString tagmask}";
+                    }
+                    {
+                      name = "Super+Shift ${toString i}";
+                      value = "set-view-tags ${toString tagmask}";
+                    }
+                    {
+                      name = "Super+Control ${toString i}";
+                      value = "toggle-focused-tags ${toString tagmask}";
+                    }
+                    {
+                      name = "Super+Shift+Control ${toString i}";
+                      value = "toggle-view-tags ${toString tagmask}";
+                    }
+                  ]
+                )
                 [
-                  "1"
-                  "2"
-                  "4"
+                  1
+                  2
+                  3
                 ]
             );
         };
