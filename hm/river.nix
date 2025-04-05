@@ -9,35 +9,59 @@
       xwayland.enable = false;
       settings = {
         map = {
-          normal = {
-            "Super Q" = "close";
-            "Super F" = "spawn firefox";
-            "Super G" = "spawn ghostty";
-            "Super Z" = "spawn zeditor";
-            "Super Space" = "spawn fuzzel";
+          normal =
+            {
+              "Super Q" = "close";
+              "Super F" = "spawn firefox";
+              "Super G" = "spawn ghostty";
+              "Super Z" = "spawn zeditor";
+              "Super Space" = "spawn fuzzel";
 
-            "Super H" = "focus-view left";
-            "Super J" = "focus-view down";
-            "Super K" = "focus-view up";
-            "Super L" = "focus-view right";
-            "Super N" = "focus-view next";
-            "Super P" = "focus-view previous";
+              "Super H" = "focus-view left";
+              "Super J" = "focus-view down";
+              "Super K" = "focus-view up";
+              "Super L" = "focus-view right";
+              "Super N" = "focus-view next";
+              "Super P" = "focus-view previous";
 
-            "Super+Shift H" = "swap left";
-            "Super+Shift J" = "swap down";
-            "Super+Shift K" = "swap up";
-            "Super+Shift L" = "swap right";
-            "Super+Shift N" = "swap next";
-            "Super+Shift P" = "swap previous";
+              "Super+Shift H" = "swap left";
+              "Super+Shift J" = "swap down";
+              "Super+Shift K" = "swap up";
+              "Super+Shift L" = "swap right";
+              "Super+Shift N" = "swap next";
+              "Super+Shift P" = "swap previous";
 
-            "Super Return" = "zoom";
+              "Super Return" = "zoom";
 
-            "Super 1" = "set-focused-tags 1";
-            "Super+Shift 1" = "set-view-tags 1";
-            "Super+Control 1" = "toggle-focused-tags 1";
-            "Super+Shift+Control 1" = "toggle-view-tags 1";
-
-          };
+              "Super 0" = "set-focused-tags 7";
+              "Super+Shift 0" = "set-view-tags 7";
+            }
+            // builtins.listToAttrs (
+              builtins.concatMap
+                (i: [
+                  {
+                    name = "Super ${i}";
+                    value = "set-focused-tags ${i}";
+                  }
+                  {
+                    name = "Super+Shift ${i}";
+                    value = "set-view-tags ${i}";
+                  }
+                  {
+                    name = "Super+Control ${i}";
+                    value = "toggle-focused-tags ${i}";
+                  }
+                  {
+                    name = "Super+Shift+Control ${i}";
+                    value = "toggle-view-tags ${i}";
+                  }
+                ])
+                [
+                  "1"
+                  "2"
+                  "4"
+                ]
+            );
         };
         default-layout = "rivertile";
         focus-follows-cursor = "normal";
