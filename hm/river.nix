@@ -41,7 +41,7 @@
                 (
                   i:
                   let
-                    pow2 = n: p: if n == 0 then 1 else pow2 (n - 1) (2 * p);
+                    pow2 = n: p: if n == 0 then p else pow2 (n - 1) (2 * p);
                     tagmask = pow2 (i - 1) 1;
                   in
                   [
