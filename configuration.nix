@@ -42,6 +42,7 @@
     ];
     packages = with pkgs; [
       kdePackages.ghostwriter
+      lan-mouse
     ];
   };
   users.defaultUserShell = pkgs.zsh;
@@ -70,8 +71,6 @@
   # List packages installed in system profile. To search, run:
   # $ nix search wget
   environment.systemPackages = with pkgs; [
-    deno
-    lan-mouse
     nixd
     nixfmt-rfc-style
   ];
