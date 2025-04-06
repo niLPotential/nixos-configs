@@ -77,7 +77,6 @@
         };
         input = {
           "\\*_Touchpad" = {
-            natural-scroll = "disabled";
             tap = "enabled";
           };
         };
