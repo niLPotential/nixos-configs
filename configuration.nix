@@ -71,8 +71,6 @@
   # $ nix search wget
   environment.systemPackages = with pkgs; [
     deno
-    gopls
-    gotools
     lan-mouse
     nixd
     nixfmt-rfc-style
