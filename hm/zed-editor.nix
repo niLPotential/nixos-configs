@@ -1,4 +1,9 @@
-{ lib, config, ... }:
+{
+  pkgs,
+  lib,
+  config,
+  ...
+}:
 {
   options = {
     zed-editor.enable = lib.mkEnableOption "enables zed-editor";
@@ -9,6 +14,9 @@
       extensions = [
         "astro"
         "deno"
+      ];
+      extraPackages = with pkgs; [
+        deno
       ];
       userSettings = {
         buffer_line_height = "standard";
