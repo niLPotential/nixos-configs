@@ -70,10 +70,7 @@
 
   # List packages installed in system profile. To search, run:
   # $ nix search wget
-  environment.systemPackages = with pkgs; [
-    nixd
-    nixfmt-rfc-style
-  ];
+  # environment.systemPackages = with pkgs; [];
 
   fonts.fontconfig.defaultFonts = {
     monospace = [ "D2Coding ligature" ];
