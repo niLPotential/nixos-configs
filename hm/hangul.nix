@@ -22,5 +22,12 @@
       QT_IM_MODULE = "fcitx";
       GTK_IM_MODULE = "fcitx";
     };
+    xsession = {
+      enable = true;
+      profileExtra = ''
+        QT_IM_MODULE = fcitx
+        GTK_IM_MODULE = fcitx
+      '';
+    };
   };
 }
