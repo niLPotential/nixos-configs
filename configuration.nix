@@ -72,10 +72,16 @@
   # $ nix search wget
   # environment.systemPackages = with pkgs; [];
 
-  fonts.fontconfig.defaultFonts = {
-    monospace = [ "D2Coding ligature" ];
-    sansSerif = [ "NanumBarunGothic" ];
-    serif = [ "NanumMyeongjo" ];
+  fonts = {
+    packages = with pkgs; [
+      nanum
+      d2coding
+    ];
+    fontconfig.defaultFonts = {
+      monospace = [ "D2Coding ligature" ];
+      sansSerif = [ "NanumBarunGothic" ];
+      serif = [ "NanumMyeongjo" ];
+    };
   };
 
   nix.settings.experimental-features = [
