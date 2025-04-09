@@ -43,7 +43,7 @@
                       url = "https://codeberg.org/river/wiki/";
                     }
                     {
-                      name = "AcrhWiki";
+                      name = "ArchWiki";
                       url = "https://wiki.archlinux.org/";
                     }
                   ];
