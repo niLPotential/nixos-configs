@@ -29,6 +29,7 @@
   networking.networkmanager.enable = true;
 
   korean.enable = true;
+  hangul.enable = true;
 
   # Define a user account. Don't forget to set a password with ‘passwd’.
   users.users.kiria = {
