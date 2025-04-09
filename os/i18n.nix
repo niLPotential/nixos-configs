@@ -1,5 +1,4 @@
 {
-  pkgs,
   lib,
   config,
   ...
@@ -23,17 +22,6 @@
       LC_PAPER = "ko_KR.UTF-8";
       LC_TELEPHONE = "ko_KR.UTF-8";
       LC_TIME = "ko_KR.UTF-8";
-    };
-
-    i18n.inputMethod = {
-      enable = true;
-      type = "fcitx5";
-      fcitx5 = {
-        addons = with pkgs; [
-          fcitx5-hangul
-        ];
-        waylandFrontend = true;
-      };
     };
   };
 }

@@ -4,6 +4,7 @@
 
   firefox.enable = true;
   fuzzel.enable = true;
+  hangul.enable = true;
   helix.enable = true;
   river.enable = true;
   waybar.enable = true;
