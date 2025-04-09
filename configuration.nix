@@ -28,6 +28,8 @@
   # Enable networking
   networking.networkmanager.enable = true;
 
+  services.xserver.enable = true;
+
   korean.enable = true;
 
   # Define a user account. Don't forget to set a password with ‘passwd’.
