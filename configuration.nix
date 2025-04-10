@@ -32,6 +32,11 @@
 
   korean.enable = true;
 
+  systemd.globalEnvironment = {
+    QT_IM_MODULE = "fcitx";
+    GTK_IM_MODULE = "fcitx";
+  };
+
   # Define a user account. Don't forget to set a password with ‘passwd’.
   users.users.kiria = {
     isNormalUser = true;
