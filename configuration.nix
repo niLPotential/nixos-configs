@@ -32,7 +32,7 @@
 
   korean.enable = true;
 
-  systemd.globalEnvironment = {
+  environment.variables = {
     QT_IM_MODULE = "fcitx";
     GTK_IM_MODULE = "fcitx";
   };
