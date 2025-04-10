@@ -25,6 +25,12 @@
     programs.regreet = {
       enable = true;
     };
+    programs.dconf = {
+      enable = true;
+      profiles = {
+        kiria = "~/.config/dconf/user";
+      };
+    };
     programs.river = {
       enable = true;
       xwayland.enable = false;
