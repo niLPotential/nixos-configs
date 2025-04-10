@@ -28,7 +28,7 @@
     programs.dconf = {
       enable = true;
       profiles = {
-        kiria = "~/.config/dconf/user";
+        kiria = /home/kiria/.config/dconf/user;
       };
     };
     programs.river = {
