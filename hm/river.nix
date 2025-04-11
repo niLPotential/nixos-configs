@@ -6,7 +6,7 @@
   config = lib.mkIf config.river.enable {
     wayland.windowManager.river = {
       enable = true;
-      xwayland.enable = false;
+      # xwayland.enable = false;
       settings = {
         map = {
           normal =

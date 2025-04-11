@@ -27,7 +27,7 @@
     };
     programs.river = {
       enable = true;
-      xwayland.enable = false;
+      # xwayland.enable = false;
       extraPackages = with pkgs; [
         fuzzel
         mako
