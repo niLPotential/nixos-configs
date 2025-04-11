@@ -50,6 +50,8 @@
     packages = with pkgs; [
       kdePackages.ghostwriter
       lan-mouse
+      grim
+      slurp
     ];
   };
   users.defaultUserShell = pkgs.zsh;
