@@ -15,7 +15,7 @@
     };
     services.greetd = {
       enable = true;
-      # greeterManagesPlymouth = true;
+      greeterManagesPlymouth = true;
       # settings = {
       #   default_session = {
       #     command = "${pkgs.river}/bin/river -c '${pkgs.greetd.regreet}/bin/regreet; riverctl exit'";
