@@ -16,25 +16,14 @@
     services.greetd = {
       enable = true;
       greeterManagesPlymouth = true;
-      # settings = {
-      #   default_session = {
-      #     command = "${pkgs.river}/bin/river -c '${pkgs.greetd.regreet}/bin/regreet; riverctl exit'";
-      #   };
-      # };
+      settings = {
+        default_session = {
+          command = "${pkgs.river}/bin/river -c '${pkgs.greetd.regreet}/bin/regreet --log-level trace; riverctl exit'";
+        };
+      };
     };
     programs.regreet = {
       enable = true;
-    };
-    programs.dconf.profiles = {
-      user.databases = [
-        {
-          settings = {
-            "org/desktop/interface" = {
-              gtk-theme = "adw-gtk3";
-            };
-          };
-        }
-      ];
     };
     programs.river = {
       enable = true;
