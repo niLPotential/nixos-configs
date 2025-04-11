@@ -25,6 +25,17 @@
     programs.regreet = {
       enable = true;
     };
+    programs.dconf.profiles = {
+      greeter.databases = [
+        {
+          settings = {
+            "org/gnome/desktop/interface" = {
+              gtk-theme = "adw-gtk3";
+            };
+          };
+        }
+      ];
+    };
     programs.river = {
       enable = true;
       # xwayland.enable = false;
