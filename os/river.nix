@@ -15,7 +15,7 @@
     };
     services.greetd = {
       enable = true;
-      greeterManagesPlymouth = true;
+      # greeterManagesPlymouth = true;
       # settings = {
       #   default_session = {
       #     command = "${pkgs.river}/bin/river -c '${pkgs.greetd.regreet}/bin/regreet; riverctl exit'";
@@ -24,12 +24,6 @@
     };
     programs.regreet = {
       enable = true;
-    };
-    programs.dconf = {
-      enable = true;
-      profiles = {
-        kiria = /home/kiria/.config/dconf/user;
-      };
     };
     programs.river = {
       enable = true;
