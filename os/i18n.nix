@@ -23,5 +23,11 @@
       LC_TELEPHONE = "ko_KR.UTF-8";
       LC_TIME = "ko_KR.UTF-8";
     };
+
+    i18n.inputMethod = {
+      enable = true;
+      type = "fcitx5";
+      fcitx5.waylandFrontend = true;
+    };
   };
 }
