@@ -15,6 +15,7 @@
               "Super F" = "spawn firefox";
               "Super G" = "spawn ghostty";
               "Super Z" = "spawn zeditor";
+              "Super S" = "spawn grim";
               "Super Space" = "spawn fuzzel";
 
               "Super H" = "focus-view left";
