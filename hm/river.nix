@@ -11,6 +11,8 @@
         map = {
           normal =
             {
+              "Super R" = "spawn 'GTK_DEBUG=interactive sudo regreet --demo'";
+
               "Super Q" = "close";
               "Super F" = "spawn firefox";
               "Super G" = "spawn ghostty";

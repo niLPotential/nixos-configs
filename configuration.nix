@@ -35,7 +35,6 @@
   environment.variables = {
     QT_IM_MODULE = "fcitx";
     GTK_IM_MODULE = "fcitx";
-    GTK_DEBUG = "interactive";
   };
 
   # Define a user account. Don't forget to set a password with ‘passwd’.
@@ -80,7 +79,9 @@
 
   # List packages installed in system profile. To search, run:
   # $ nix search wget
-  # environment.systemPackages = with pkgs; [];
+  environment.systemPackages = with pkgs; [
+    greetd.regreet
+  ];
 
   fonts = {
     packages = with pkgs; [
