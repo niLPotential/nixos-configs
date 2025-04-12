@@ -24,7 +24,7 @@
     };
     programs.regreet = {
       enable = true;
-      theme = pkgs.rose-pine-gtk-theme;
+      theme.package = pkgs.rose-pine-gtk-theme;
     };
     stylix.target.regreet = {
       enable = false;
