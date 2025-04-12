@@ -81,6 +81,7 @@
   # $ nix search wget
   environment.systemPackages = with pkgs; [
     greetd.regreet
+    rose-pine-gtk-theme
   ];
 
   fonts = {
