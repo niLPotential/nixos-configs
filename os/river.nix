@@ -16,25 +16,19 @@
     services.greetd = {
       enable = true;
       greeterManagesPlymouth = true;
-      settings = {
-        default_session = {
-          command = "${pkgs.river}/bin/river -c '${pkgs.greetd.regreet}/bin/regreet --log-level trace; riverctl exit'";
-        };
-      };
+      # settings = {
+      #   default_session = {
+      #     command = "${pkgs.river}/bin/river -c '${pkgs.greetd.regreet}/bin/regreet --log-level trace; riverctl exit'";
+      #   };
+      # };
     };
     programs.regreet = {
       enable = true;
+      theme = pkgs.rose-pine-gtk-theme;
     };
-    programs.dconf.profiles = {
-      greeter.databases = [
-        {
-          settings = {
-            "org/gnome/desktop/interface" = {
-              gtk-theme = "adw-gtk3";
-            };
-          };
-        }
-      ];
+    stylix.target.regreet = {
+      enable = false;
+      useWallpaper = false;
     };
     programs.river = {
       enable = true;
