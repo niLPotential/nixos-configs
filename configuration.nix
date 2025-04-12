@@ -35,6 +35,7 @@
   environment.variables = {
     QT_IM_MODULE = "fcitx";
     GTK_IM_MODULE = "fcitx";
+    GTK_DEBUG = "interactive";
   };
 
   # Define a user account. Don't forget to set a password with ‘passwd’.
