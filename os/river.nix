@@ -24,8 +24,8 @@
     };
     programs.regreet = {
       enable = true;
-      theme.package = pkgs.adw-gtk3;
-      theme.name = "adw-gtk3";
+      theme.package = pkgs.rose-pine-gtk-theme;
+      theme.name = "rose-pine-dawn";
     };
     stylix.targets.regreet = {
       enable = false;
