@@ -18,5 +18,8 @@
         waylandFrontend = true;
       };
     };
+    xdg.dataFile = {
+      "fcitx5/conf/classicui.conf".text = "Theme=stylix";
+    };
   };
 }
