@@ -26,7 +26,7 @@
       enable = true;
       theme.package = pkgs.rose-pine-gtk-theme;
     };
-    stylix.target.regreet = {
+    stylix.targets.regreet = {
       enable = false;
       useWallpaper = false;
     };
