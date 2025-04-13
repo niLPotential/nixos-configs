@@ -24,8 +24,8 @@
     };
     programs.regreet = {
       enable = true;
-      theme.package = pkgs.zuki-themes;
-      theme.name = "Zukitre";
+      theme.package = pkgs.nordic;
+      theme.name = "Nordic";
     };
     stylix.targets.regreet = {
       enable = false;
