@@ -1,3 +1,4 @@
+{ pkgs, ... }:
 {
   home.username = "kiria";
   home.homeDirectory = "/home/kiria";
@@ -13,7 +14,14 @@
   stylix.enable = true;
   stylix.targets.gtk.enable = false;
 
-  gtk.enable = true;
+  gtk = {
+    enable = true;
+    theme = {
+
+      package = pkgs.nordic;
+      name = "Nordic";
+    };
+  };
   qt.enable = true;
   services.mako.enable = true;
   services.wob.enable = true;
