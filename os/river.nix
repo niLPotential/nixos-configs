@@ -24,8 +24,8 @@
     };
     programs.regreet = {
       enable = true;
-      theme.package = pkgs.adw-gtk3;
-      theme.name = "adw-gtk3-dark";
+      # theme.package = pkgs.adw-gtk3;
+      theme.name = "adw-gtk3";
     };
     stylix.targets.regreet = {
       enable = false;
