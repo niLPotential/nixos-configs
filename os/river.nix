@@ -25,7 +25,7 @@
     programs.regreet = {
       enable = true;
       theme.package = pkgs.juno-theme;
-      theme.name = "Juno";
+      theme.name = "juno";
     };
     stylix.targets.regreet = {
       enable = false;
