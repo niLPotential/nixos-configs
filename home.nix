@@ -16,7 +16,7 @@
   gtk = {
     enable = true;
     theme = {
-      name = "adw-gtk3";
+      name = "Nordic";
     };
   };
   qt.enable = true;
