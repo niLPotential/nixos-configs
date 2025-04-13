@@ -42,5 +42,12 @@
         wpaperd
       ];
     };
+    installPhase = ''
+      runHook preInstall
+
+      echo $out
+
+      runHook postInstall
+    '';
   };
 }
