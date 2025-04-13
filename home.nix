@@ -13,7 +13,7 @@
   stylix.enable = true;
   stylix.targets.gtk.enable = false;
 
-  gtk.enable = false;
+  gtk.enable = true;
   qt.enable = true;
   services.mako.enable = true;
   services.wob.enable = true;
