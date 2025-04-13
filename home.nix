@@ -11,8 +11,9 @@
   zed-editor.enable = true;
 
   stylix.enable = true;
+  stylix.targets.gtk.enable = false;
 
-  gtk.enable = true;
+  gtk.enable = false;
   qt.enable = true;
   services.mako.enable = true;
   services.wob.enable = true;
