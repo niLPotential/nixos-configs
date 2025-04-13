@@ -16,20 +16,14 @@
     services.greetd = {
       enable = true;
       greeterManagesPlymouth = true;
-      # settings = {
-      #   default_session = {
-      #     command = "${pkgs.river}/bin/river -c '${pkgs.greetd.regreet}/bin/regreet --log-level trace; riverctl exit'";
-      #   };
-      # };
+      settings = {
+        default_session = {
+          command = "${pkgs.river}/bin/river -c '${pkgs.greetd.regreet}/bin/regreet --log-level trace; riverctl exit'";
+        };
+      };
     };
     programs.regreet = {
       enable = true;
-      # theme.package = pkgs.adw-gtk3;
-      theme.name = "Nordic";
-    };
-    stylix.targets.regreet = {
-      enable = false;
-      useWallpaper = false;
     };
     programs.river = {
       enable = true;
@@ -42,12 +36,5 @@
         wpaperd
       ];
     };
-    installPhase = ''
-      runHook preInstall
-
-      echo $out
-
-      runHook postInstall
-    '';
   };
 }

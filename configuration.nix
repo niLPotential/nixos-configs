@@ -81,7 +81,6 @@
   # $ nix search wget
   environment.systemPackages = with pkgs; [
     greetd.regreet
-    nordic
   ];
 
   fonts = {
