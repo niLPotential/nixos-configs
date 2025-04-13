@@ -1,4 +1,3 @@
-{ pkgs, ... }:
 {
   home.username = "kiria";
   home.homeDirectory = "/home/kiria";
@@ -17,9 +16,7 @@
   gtk = {
     enable = true;
     theme = {
-
-      package = pkgs.nordic;
-      name = "Nordic";
+      name = "adw-gtk3";
     };
   };
   qt.enable = true;
