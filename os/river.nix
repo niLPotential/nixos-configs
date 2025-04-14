@@ -36,5 +36,8 @@
         wpaperd
       ];
     };
+    environment.etc = {
+      test.text = "Text config";
+    };
   };
 }
