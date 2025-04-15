@@ -18,7 +18,7 @@
       greeterManagesPlymouth = true;
       settings = {
         default_session = {
-          command = "${pkgs.river}/bin/river -c '${pkgs.greetd.regreet}/bin/regreet --log-level trace; riverctl exit'";
+          command = "${pkgs.river}/bin/river -c '${pkgs.greetd.regreet}/bin/regreet; riverctl exit'";
         };
       };
     };
@@ -28,16 +28,6 @@
     programs.river = {
       enable = true;
       # xwayland.enable = false;
-      extraPackages = with pkgs; [
-        fuzzel
-        mako
-        waybar
-        wob
-        wpaperd
-      ];
-    };
-    environment.etc = {
-      test.text = "Text config";
     };
   };
 }
