@@ -75,6 +75,10 @@
                       name = "solved.ac";
                       url = "https://solved.ac";
                     }
+                    {
+                      name = "Programmers";
+                      url = "https://programmers.co.kr/";
+                    }
                   ];
                 }
                 {
